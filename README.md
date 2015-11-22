@@ -1,4 +1,4 @@
-# Full screen video in an android app for any screen orientation
+# Android - Full screen video in any screen orientation
 
 <img width="728" src="https://fernandopauer.files.wordpress.com/2015/07/google-dev.png?w=411" >
 
@@ -60,7 +60,7 @@ Now we can create our class, it is simple and easy to understand, that is our cl
 
 
 ```java
-public class VideoPlayer extends Activity implements OnCompletionListener {
+public class VideoPlayerActivity extends Activity implements OnCompletionListener {
            
     private VideoView mVV;
          
@@ -157,7 +157,7 @@ mVV.setOnTouchListener( new View.OnTouchListener() {
 
 ## Playing a different video
 
-Since we set “singleLaunch” to property taskMode in the android manifest activity declaration, that means if we attempt to launch the VideoPlayer activity while its still running, onCreate() won’t be called, so it won’t play a different video. In this case, the onNewIntent() function must be called with the new intent. We simply parse the extras bundle to get the video path and it will play the new file. Please insert this code in the file VideoPlayerActivity.java :
+Since we set “singleLaunch” to property taskMode in the file AndroidManifest.xml, that means if we attempt to launch the VideoPlayer activity while its still running, onCreate() won’t be called, so it won’t play a different video. In this case, the onNewIntent() function must be called with the new intent. We simply parse the extras bundle to get the video path and it will play the new file. Please insert this code in the file VideoPlayerActivity.java :
 
 ```java
 protected void onNewIntent(Intent intent) {
